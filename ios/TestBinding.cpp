@@ -49,7 +49,7 @@ namespace facebook {
                                                                                size_t count) -> jsi::Value {
           return test.runTest();
         });
-      }                                                
+      }
       
       return jsi::Value::undefined();
     }

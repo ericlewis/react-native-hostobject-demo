@@ -6,7 +6,7 @@ namespace facebook {
   namespace react {
     
     int Test::runTest() const {
-      return 100;
+      return 1337;
     }
   } // namespace react
 } // namespace facebook
