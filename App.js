@@ -17,9 +17,13 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+
+function sthHard(arg) {
+  console.warn(arg)
+}
 export default class App extends Component<Props> {
   render() {
-    console.warn(global.nativeTest.runTest());
+    console.warn(global.nativeTest.runTest(sthHard, 1));
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
