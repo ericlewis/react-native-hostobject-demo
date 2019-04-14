@@ -47,7 +47,7 @@ namespace facebook {
                                                                                const jsi::Value &thisValue,
                                                                                const jsi::Value *arguments,
                                                                                size_t count) -> jsi::Value {
-          const jsi::Value* arg1 = arguments;
+          auto arg1 = &arguments[0];
           return test.runTest(arg1->asNumber());
         });
       }
