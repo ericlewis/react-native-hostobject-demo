@@ -42,12 +42,13 @@ namespace facebook {
       auto &test = *test_;
       
       if (methodName == "runTest") {
-        return jsi::Function::createFromHostFunction(runtime, name, 0, [&test](
+        return jsi::Function::createFromHostFunction(runtime, name, 1, [&test](
                                                                                jsi::Runtime &runtime,
                                                                                const jsi::Value &thisValue,
                                                                                const jsi::Value *arguments,
                                                                                size_t count) -> jsi::Value {
-          return test.runTest();
+          auto arg1 = &arguments[0];
+          return test.runTest(arg1->asNumber());
         });
       }
       

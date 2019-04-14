@@ -11,7 +11,7 @@ namespace facebook {
     private:
       friend class TestBinding;
       
-      int runTest() const;
+      int runTest(int n) const;
     };
     
   } // namespace react
