@@ -5,7 +5,18 @@
 #include "Test.h"
 #include <jsi/jsi.h>
 
+#if ANDROID
+#include <jni.h>
+#endif
+
 using namespace facebook;
+
+#if ANDROID
+extern "C" {
+    JNIEXPORT void JNICALL
+    Java_com_testmodule_MainActivity_install(JNIEnv* env, jobject thiz, jlong runtimePtr);
+}
+#endif
 
 namespace example {
 
