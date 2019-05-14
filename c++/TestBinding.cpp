@@ -4,7 +4,7 @@
 
 #include "Test.h"
 // TODO: couldn't get this to compile due to issues with double-conversion.h - seems not to be needed?
-// #include <jsi/JSIDynamic.h>
+#include <jsi/JSIDynamic.h>
 
 #if ANDROID
 extern "C"
