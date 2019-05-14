@@ -1,9 +1,6 @@
-// Copyright 2004-present Facebook. All Rights Reserved.
-
 #include "TestBinding.h"
 
 #include "Test.h"
-// TODO: couldn't get this to compile due to issues with double-conversion.h - seems not to be needed?
 #include <jsi/JSIDynamic.h>
 
 #if ANDROID

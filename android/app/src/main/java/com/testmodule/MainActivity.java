@@ -6,7 +6,7 @@ import com.facebook.react.bridge.ReactContext;
 
 public class MainActivity extends ReactActivity implements ReactInstanceManager.ReactInstanceEventListener {
     static {
-        System.loadLibrary("test_module_jni"); //this loads the library when the class is loaded
+        System.loadLibrary("test_module_jni"); // this loads the library when the class is loaded
     }
 
     /**
