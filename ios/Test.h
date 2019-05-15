@@ -4,15 +4,13 @@
 
 #include <jsi/jsi.h>
 
-namespace facebook {
-  namespace react {
-    
-    class Test {
-    private:
-      friend class TestBinding;
-      
-      int runTest() const;
-    };
-    
-  } // namespace react
-} // namespace facebook
+namespace example {
+
+  class Test {
+  private:
+    friend class TestBinding;
+
+    int runTest() const;
+  };
+
+} // namespace example

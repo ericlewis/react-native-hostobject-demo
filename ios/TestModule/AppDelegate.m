@@ -22,12 +22,12 @@
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"TestModule"
                                             initialProperties:nil];
-  
+
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(handleJavaScriptDidLoadNotification:)
                                                name:RCTJavaScriptDidLoadNotification
                                              object:bridge];
-  
+
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -50,9 +50,9 @@
 - (void)handleJavaScriptDidLoadNotification:(__unused NSNotification*)notification {
   RCTCxxBridge* bridge = notification.userInfo[@"bridge"];
   facebook::jsi::Runtime* runtime = (facebook::jsi::Runtime*)bridge.runtime;
-  auto test = std::make_unique<facebook::react::Test>();
-  std::shared_ptr<facebook::react::TestBinding> testBinding_ = std::make_shared<facebook::react::TestBinding>(std::move(test));
-  facebook::react::TestBinding::install((*runtime),  testBinding_);
+  auto test = std::make_unique<example::Test>();
+  std::shared_ptr<example::TestBinding> testBinding_ = std::make_shared<example::TestBinding>(std::move(test));
+  example::TestBinding::install((*runtime),  testBinding_);
 }
 
 @end
