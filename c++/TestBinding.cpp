@@ -1,9 +1,22 @@
-// Copyright 2004-present Facebook. All Rights Reserved.
-
 #include "TestBinding.h"
 
 #include "Test.h"
 #include <jsi/JSIDynamic.h>
+
+#if ANDROID
+extern "C"
+{
+  JNIEXPORT void JNICALL
+  Java_com_testmodule_MainActivity_install(JNIEnv* env, jobject thiz, jlong runtimePtr)
+  {
+      auto test = std::make_unique<facebook::react::Test>();
+      auto testBinding = std::make_shared<facebook::react::TestBinding>(std::move(test));
+      jsi::Runtime* runtime = (jsi::Runtime*)runtimePtr;
+
+      example::TestBinding::install(*runtime, testBinding);
+  }
+}
+#endif
 
 namespace example {
 
